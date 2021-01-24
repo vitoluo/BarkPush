@@ -7,7 +7,7 @@
    ```
    npm install -g pm2    # npm和yarn二选一
    yarn global add pm2   # npm和yarn二选一
-   pm2 start server.js
+   pm2 start push.js
    ```
 5. 推送消息 `http://<listenAddr>:<listenPort>`，格式参照Bark说明。（Android只支持title content automaticallyCopy）
 
