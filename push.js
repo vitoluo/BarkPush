@@ -60,8 +60,8 @@ function pushAndroidMsg(ids, reqPath) {
     const reqUrl = new URL(reqPath, 'http://temp')
 
     const pathArr = reqUrl.pathname.split('/')
-    const title = pathArr.length > 2 ? decodeURI(pathArr[pathArr.length - 2]) : '推送消息'
-    const content = decodeURI(pathArr[pathArr.length - 1])
+    const title = pathArr.length > 2 ? decodeURIComponent(pathArr[pathArr.length - 2]) : '推送消息'
+    const content = decodeURIComponent(pathArr[pathArr.length - 1])
     const autoCopy = reqUrl.searchParams.get('automaticallyCopy')
 
     const req = https.request('https://fcm.googleapis.com/fcm/send', {
