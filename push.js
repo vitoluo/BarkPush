@@ -1,9 +1,9 @@
 const http = require('http')
 const https = require('https')
-const { iOSPushUrls, androidPushIds } = require('./push-devices')
+const { iOSPushUrls, androidPushIds, listenAddr, listenPort } = require('./push-devices')
 
 const server = http.createServer()
-server.listen(8888, 'localhost', () => console.log('推送服务启动成功，监听本地端口：8888'))
+server.listen(listenPort, listenAddr, () => console.log(`推送服务启动成功，服务地址：http://${listenAddr}:${listenPort}`))
 server.on('request', async (req, resp) => {
   resp.setHeader('Content-Type', 'application/json')
 
